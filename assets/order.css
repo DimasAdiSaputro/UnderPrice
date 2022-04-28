@@ -1,0 +1,150 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text],
+input[type=number],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background: linear-gradient(90deg,
+            rgba(255, 70, 49, 0.85) 0%,
+            rgba(208, 31, 96, 0.85) 50%,
+            rgba(212, 13, 87, 0.85) 67%,
+            rgba(191, 33, 92, 0.85) 100%);
+    color: white;
+    /* align-self: center; */
+    margin: auto;
+    padding: 12px 20%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background: linear-gradient(90deg,
+            rgba(238, 35, 12, 0.85) 0%,
+            rgba(211, 25, 93, 0.85) 50%,
+            rgba(187, 4, 71, 0.85) 67%,
+            rgba(158, 22, 72, 0.85) 100%);
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: inherit;
+    padding: 20px;
+    width: 60vw;
+    float: right;
+}
+
+.img-container {
+    background-color: inherit;
+    padding: 20px;
+    width: 30vw;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: 80%;
+}
+
+.mySlides {
+    display: none;
+}
+
+#controler {
+    position: absolute;
+    top: 30vh;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    width: calc(25vw - 18px);
+    height: max-content;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 1;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+img.demo {
+    opacity: 0.6;
+}
+
+.active-demo,
+.demo:hover {
+    opacity: 1;
+}
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#col-view {
+    position: absolute;
+    bottom: 30vh;
+    display: flex;
+    justify-content: center;
+}
+
+.image-1 {
+    position: relative;
+    bottom: 0;
+    float: left;
+    display: block;
+}
+
+.image-1>img {
+    width: 100%;
+}

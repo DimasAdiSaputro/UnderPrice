@@ -1,0 +1,433 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 12.5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #36221c;
+    border-radius: 10px;
+}
+
+@font-face {
+    font-family: varsity;
+    src: url(varsity_regular.ttf);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #000;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    padding-bottom: 3%;
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+    flex: 1 1 auto;
+    margin-left: 10%;
+    margin-top: -15.5;
+    align-items: center;
+    padding-right: 15;
+}
+
+#brand-icon>img {
+    width: auto;
+    height: 100%;
+    margin-top: -1rem;
+    border-right: 2px solid white;
+}
+
+.navbar a {
+    margin: 15px;
+    color: #c0c2c5;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.content-display {
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 11.5rem;
+    margin-left: auto;
+}
+
+.content {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-gap: 5% 5%;
+}
+
+.card,
+.brand-logo {
+    position: relative;
+    width: 100%;
+}
+
+.card>img {
+    margin: auto;
+    max-width: 100%;
+}
+
+.card>.overlay-card {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+}
+
+.card:hover .overlay-card {
+    opacity: 0.3;
+}
+
+.brand-logo {
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.brand-logo>#img-1 {
+    margin-left: auto;
+    max-width: 100%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid#888;
+    width: 40%;
+    height: max-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.mySlides {
+    display: none;
+}
+
+#controler {
+    position: absolute;
+    top: 30vh;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    width: calc(50% - 18px);
+    height: max-content;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 1;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+img.demo {
+    opacity: 0.6;
+}
+
+.active-demo,
+.demo:hover {
+    opacity: 1;
+}
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+/* The Close Button */
+.close {
+    margin-right: 15px;
+    margin-top: 15px;
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding-bottom: 5%;
+    background-color: white;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-body>.image {
+    left: 0;
+    width: 50%;
+}
+
+.modal-body>.image>img {
+    width: 100%;
+}
+
+.modal-body>.image-1 {
+    float: left;
+    display: block;
+
+}
+
+.modal-body>.image-1>img {
+    left: 0;
+    width: 100%;
+}
+
+.modal-body>.product_name {
+    max-width: 40%;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: normal;
+    word-wrap: normal;
+    top: 15%;
+    left: 55%;
+    font-weight: bolder;
+}
+
+.btn-buy {
+    position: absolute;
+    padding: 3% 3%;
+    background: linear-gradient(90deg,
+            rgba(255, 70, 49, 0.85) 0%,
+            rgba(208, 31, 96, 0.85) 50%,
+            rgba(212, 13, 87, 0.85) 67%,
+            rgba(191, 33, 92, 0.85) 100%);
+    color: white;
+    font-weight: bold;
+    float: right;
+    right: 4%;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#category-container {
+    position: fixed;
+    bottom: 7%;
+    right: 1.5%;
+    margin-left: 0%;
+    border: none;
+    outline: none;
+}
+
+.nav-category {
+    z-index: 1000;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 11.3vh;
+    height: 11.3vh;
+    border-radius: 50%;
+    background: linear-gradient(90deg,
+            rgba(255, 70, 49, 0.85) 0%,
+            rgba(208, 31, 96, 0.85) 50%,
+            rgba(212, 13, 87, 0.85) 67%,
+            rgba(191, 33, 92, 0.85) 100%);
+    cursor: pointer;
+}
+
+#home,
+#hanger,
+#warrior,
+#ventela,
+#pantrobas {
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.hanger-ico {
+    width: 10.8vh;
+    height: 10.8vh;
+}
+
+.home-ico {
+    width: 12.5vh;
+    height: 12.5vh;
+}
+
+.warrior-ico,
+.ventela-ico,
+.pantrobas-ico {
+    width: 8.3vh;
+    height: 8.3vh;
+}
+
+.home,
+.warrior,
+.ventela,
+.pantrobas {
+    bottom: 0%;
+    right: 0%;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.hide-category {
+    bottom: 0%;
+    z-index: -1000;
+}
+
+.home-active {
+    opacity: 0.95;
+    bottom: 250%;
+    z-index: 1000;
+}
+
+.warrior-active {
+    opacity: 0.95;
+    bottom: 130%;
+    z-index: 1000;
+}
+
+.ventela-active {
+    opacity: 0.95;
+    bottom: 95%;
+    right: 110%;
+    z-index: 1000;
+}
+
+.pantrobas-active {
+    opacity: 0.95;
+    bottom: -20%;
+    right: 130%;
+    z-index: 1000;
+}
+
+@media (max-width: 527px) {
+    .content {
+        padding-top: 10%
+    }
+}
